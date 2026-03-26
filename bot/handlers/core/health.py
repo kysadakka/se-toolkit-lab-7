@@ -9,25 +9,25 @@ if str(bot_dir) not in sys.path:
     sys.path.insert(0, str(bot_dir))
 
 from config import load_config
+from services.lms_client import client
 
 
 def handle_health(user_input: str = "") -> str:
     """Handle the /health command.
-    
+
     Args:
         user_input: The raw user input (ignored for /health)
-        
+
     Returns:
         Health status text
     """
-    config = load_config()
-    
-    # For now, return a simple status message
-    # Task 2 will implement actual backend health checks
-    lms_url = config.get("LMS_API_URL", "not configured")
-    
-    return (
-        "✅ Bot is running\n"
-        f"📡 LMS API URL: {lms_url}\n"
-        "ℹ️ Backend health check will be implemented in Task 2"
-    )
+    try:
+        items = client.get_items()
+        count = len(items)
+        return f"✅ Backend is healthy. {count} items available."
+    except Exception as e:
+        error_msg = str(e)
+        # Remove redundant "Backend error:" prefix if already in message
+        if error_msg.startswith("Backend error:"):
+            return f"❌ {error_msg}"
+        return f"❌ Backend error: {error_msg}"
