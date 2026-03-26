@@ -1,0 +1,13 @@
+nohup: ignoring input
+2026-03-26 14:31:46,198 - __main__ - INFO - Starting bot in Telegram mode...
+2026-03-26 14:31:46,709 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getMe "HTTP/1.1 200 OK"
+2026-03-26 14:31:46,791 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-26 14:31:46,795 - telegram.ext.Application - INFO - Application started
+2026-03-26 14:31:57,208 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
+2026-03-26 14:32:07,321 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
+2026-03-26 14:32:17,411 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
+2026-03-26 14:32:27,498 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
+2026-03-26 14:32:37,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
+2026-03-26 14:32:47,690 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
+2026-03-26 14:32:57,778 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
+2026-03-26 14:33:07,868 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8398393779:AAER2cmRGCua2xI3q9A1fF4K4dZ_5Qs2_Bo/getUpdates "HTTP/1.1 200 OK"
