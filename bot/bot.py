@@ -13,7 +13,7 @@ import logging
 
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
-
+from handlers.intent import handle_intent
 from config import load_config
 from handlers import (
     handle_start,
@@ -52,6 +52,10 @@ def route_command(command: str, user_input: str = "") -> str:
     handler = handlers.get(command)
     if handler:
         return handler(user_input)
+    else:
+        # Natural language input - use LLM for intent routing
+        from handlers.intent import handle_intent
+        response = handle_intent(user_input)
     return f"Unknown command: {command}. Use /help for available commands."
 
 
@@ -77,11 +81,7 @@ def run_test_mode(user_input: str) -> None:
     else:
         # Natural language input - for now, provide a default response
         # Task 3 will implement intent recognition
-        response = (
-            "🤖 I received your message: \"{}\"\n\n"
-            "Natural language processing will be implemented in Task 3.\n"
-            "For now, try using commands like /start, /help, /labs, or /scores.".format(user_input)
-        )
+        response = handle_intent(user_input)
     
     print(response)
     sys.exit(0)
