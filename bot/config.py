@@ -31,3 +31,12 @@ def load_config() -> dict[str, str]:
         "LLM_API_BASE_URL": os.getenv("LLM_API_BASE_URL", "http://localhost:42005/v1"),
         "LLM_API_MODEL": os.getenv("LLM_API_MODEL", "coder-model"),
     }
+
+_config = load_config()
+
+BOT_TOKEN = _config["BOT_TOKEN"]
+LMS_API_URL = _config["LMS_API_URL"]
+LMS_API_KEY = _config["LMS_API_KEY"]
+LLM_API_KEY = _config["LLM_API_KEY"]
+LLM_API_BASE_URL = _config["LLM_API_BASE_URL"]
+LLM_API_MODEL = _config["LLM_API_MODEL"]
