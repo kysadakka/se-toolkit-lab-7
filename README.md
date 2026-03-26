@@ -91,3 +91,30 @@ By the end of this lab, you should be able to say:
 2. [Backend Integration](./lab/tasks/required/task-2.md) — P0: slash commands + real data
 3. [Intent-Based Natural Language Routing](./lab/tasks/required/task-3.md) — P1: LLM tool use
 4. [Containerize and Document](./lab/tasks/required/task-4.md) — P3: containerize + deploy
+
+## Deploy
+
+### Prerequisites
+- Docker and Docker Compose installed
+- `.env.docker.secret` file with required environment variables:
+  - `AUTOCHECKER_EMAIL`, `AUTOCHECKER_PASSWORD` — autochecker credentials
+  - `LMS_API_KEY` — backend API key
+  - `BOT_TOKEN` — Telegram bot token (from @BotFather)
+  - `LLM_API_KEY` — Qwen API key (for intent routing)
+  - `LLM_API_MODEL` — model name (default: coder-model)
+
+### Deploy on VM
+```bash
+# Clone repository
+git clone https://github.com/kysadakka/se-toolkit-lab-7.git
+cd se-toolkit-lab-7
+
+# Configure environment
+cp .env.docker.example .env.docker.secret
+nano .env.docker.secret  # fill in actual values
+
+# Start all services
+docker compose --env-file .env.docker.secret up --build -d
+
+# Check status
+docker compose --env-file .env.docker.secret ps
